@@ -1,0 +1,27 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  curl:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    steps:
+    - name: send deployment data
+      uses: dkershner6/post-api-call-action@v1
+      with:
+        # URL to send post request to
+        url: https://app.insightfinder.com/api/v1/deploymentEventReceive
+        # JSON string of data to pass into request
+        data: "{\"projectName\":\"GitAction\", \"userName\":\"ajain\", \"licenseKey\":\"41520a92fe3875e7707a3f5e07cd3c0a3e8238d3\", \"deploymentData\":[{\"instanceName\":\"TEST\", \"timestamp\": 1650643246587, \"data\":\"Deployment\"}]}"
+        headers: "{\"agent-type\":\"Stream\"}"
