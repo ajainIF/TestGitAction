@@ -23,5 +23,5 @@ jobs:
         # URL to send post request to
         url: https://app.insightfinder.com/api/v1/deploymentEventReceive
         # JSON string of data to pass into request
-        data: "{\"projectName\":\"GitAction\", \"userName\":\"ajain\", \"licenseKey\":\"41520a92fe3875e7707a3f5e07cd3c0a3e8238d3\", \"deploymentData\":[{\"instanceName\":\"TEST\", \"timestamp\": 1650643246587, \"data\":\"Deployment\"}]}"
+        data: "{\"projectName\":\"GitAction\", \"userName\":\"ajain\", \"licenseKey\":\"41520a92fe3875e7707a3f5e07cd3c0a3e8238d3\"}"
         headers: "{\"agent-type\":\"Stream\"}"
